@@ -1,6 +1,6 @@
 # MoreOrLess WordPress Theme
 
-## Theme demo: [https://kevq.uk](https://kevq.uk)
+![](https://raw.githubusercontent.com/kevquirk/more-or-less/master/more-or-less-example.png)
 
 ## Introduction
 MoreOrLess is a minimal WordPress theme that is based on the brilliant [Less theme by Jared Erickson](http://jarederickson.com/less-a-free-super-minimal-wordpress-theme). MoreOrLess isn't just a re-skin of Jared's theme though, I have also added a number of additional features that I think add useability, without adding too much bloat.
@@ -10,7 +10,7 @@ Some of the features I've added over and above what Jared originally coded are:
 * Improved typography using Google Fonts
 * Fixed colour/font issues with ul/li tags.
 * Improved header formatting.
-* Changed theme colours - also added additional blue and dark blue theme (see wiki for instruction on how to change the theme).
+* Changed theme colours.
 * Better formatting of blockquotes.
 * Added published date to posts.
 * Added current year to footer.
