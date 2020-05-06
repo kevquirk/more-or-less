@@ -1,0 +1,770 @@
+/*
+Theme Name: More or Less WP
+Theme URI: https://kevq.uk/about/#theme
+Author: Kev Quirk
+Author URI: https://kevq.uk
+Description: A super simple theme that is based on the awesome Less theme, by Jared Erickson.
+Version: 1.4
+License: Creative Commons Attribution – Share Alike 4.0
+Tags: minimal, simple, personal blog, personal, less, more or less, white, orange
+*/
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Libre+Baskerville:400,400i,700');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+
+}
+ol,
+ul {
+  list-style: none;
+  color: #303030;
+}
+blockquote,
+q {
+  font-family: 'Libre Baskerville', serif;
+  border-left: 3px solid #e1680f;
+  font-size: 1.08em;
+  font-style: italic;
+  max-width: 790px;
+  padding-top: 30px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  line-height: 1;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+blockquote cite {
+color: #e1680f;
+font-size: 0.8em;
+display: block;
+margin-top: 5px;
+}
+ 
+blockquote cite:before {
+content: "\2014 \2009";
+}
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+code,
+kbd,
+tt,
+var {
+  font: 1.0em Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+small {
+  font-size: 75%;
+}
+big {
+  font-size: 125%;
+}
+figure {
+  margin: 0;
+}
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+th {
+  font-weight: bold;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+
+  vertical-align: baseline;
+  *vertical-align: middle;
+  /* Improves appearance and consistency in all browsers */
+
+}
+button,
+input {
+  line-height: normal;
+  /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+
+  *overflow: visible;
+  /* Corrects inner spacing displayed oddly in IE6/7 */
+
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 1px solid #dddddd;
+  border-color: #ccc #ccc #bbb #ccc;
+  border-radius: 3px;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  /* Improves usability and consistency of cursor style between image-type 'input' and others */
+
+  -webkit-appearance: button;
+  /* Corrects inability to style clickable 'input' types in iOS */
+
+  font-size: 12px;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 1.12em 1.5em 1em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  border-color: #ccc #bbb #aaa #bbb;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  border-color: #aaa #bbb #bbb #bbb;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* Addresses box sizing set to content-box in IE8/9 */
+
+  padding: 0;
+  /* Addresses excess padding in IE8/9 */
+
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* Addresses appearance set to searchfield in S5, Chrome */
+
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+
+  border: 0;
+  padding: 0;
+}
+input[type=text],
+input[type=email],
+textarea {
+  color: #303030;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+  color: #101010;
+}
+input[type=text],
+input[type=email] {
+  padding: 3px;
+}
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+
+  padding: 10px;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+
+  width: 98%;
+}
+/* styles
+-------------------------------------------------------------- */
+body,
+button,
+input,
+select {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  font-family: 'Archivo Narrow', sans-serif;
+  line-height: 26.64px;
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+/* typography
+-------------------------------------------------------------- */
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: 800;
+  line-height: 1.2em;
+  margin: 1.414em 0 0.5em;
+  color: #303030;
+}
+h1 {
+  margin-top: 0;
+  font-size: 2.074em;
+}
+h2 {
+  font-size: 1.728em;
+}
+h3 {
+  font-size: 1.44em;
+}
+h4 {
+  font-size: 1.2em;
+}
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+/* Text elements */
+p {
+  margin-bottom: 1.5em;
+  font-family: 'Libre Baskerville', serif;
+  color: #303030;
+}
+ul,
+ol {
+  margin: 0 0 1.5em 3em;
+  font-family: 'Libre Baskerville', serif;
+}
+ul {
+  list-style: disc;
+  font-family: 'Libre Baskerville', serif;
+}
+ol {
+  list-style: decimal;
+  font-family: 'Libre Baskerville', serif;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0 1.5em 1.5em;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+address {
+  margin: 0 0 1.5em;
+}
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  padding: 1.6em;
+  overflow: auto;
+  max-width: 100%;
+}
+/* Links */
+a {
+  color: #e1680f;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  text-decoration: none;
+}
+a:hover
+a:focus,
+a:active {
+  text-decoration: underline;
+  color: #e1680f;
+}
+/* Alignment */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+/* Header
+-------------------------------------------------------------- */
+header {
+  padding: 20px 0;
+  background: transparent;
+  margin: 20px auto;
+  border-bottom-style: solid;
+  border-color: #e1680f;
+  border-width: 2px;
+  max-width: 1000px;
+}
+header .gravatar {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0;
+  float: right;
+}
+header #brand {
+  float: left;
+  width: 80%;
+  margin-top: 22px;
+}
+header #brand h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  color: #303030;
+  line-height: 23.68px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+header #brand h1 a {
+  color: #303030;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1.8em;
+  font-family: "Libre Baskerville";
+}
+header #brand h1 span {
+  font-weight: 200;
+  color: #303030;
+  text-transform: capitalize;
+  font-size: 0.95em;
+  font-family: 'Archivo Narrow', sans-serif;
+  line-height: 2.2;
+}
+header nav {
+  float: left;
+}
+header nav ul {
+  list-style: none;
+  margin: 0;
+}
+header nav ul li ul li {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  transition: all 0.5s ease 0s, visibility 0s linear 0.5s;
+  font-size: 0.9em;
+}
+header nav ul li:hover ul li {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+header nav ul li {
+  float: left;
+  margin: 2px 10px 0 0;
+}
+header nav ul li a {
+  color: #303030;
+  font-size: 1em;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: bold;
+}
+header nav ul li a:hover {
+  color: #e1680f;
+  text-decoration: underline;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+.container {
+  max-width: 790px;
+  padding: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+/* Posts/Articles
+-------------------------------------------------------------- */
+article {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 80px;
+  border-bottom: 1px solid #dddddd;
+}
+article .title {
+  color: #303030;
+  line-height: 56.24px;
+  font-size: 38px;
+  font-size: 3.8rem;
+  font-weight: 700;
+}
+article .title a {
+  text-decoration: none;
+  color: #303030;
+}
+article .title a:hover {
+  color: #e1680f;
+  text-decoration: underline;
+}
+article .post-meta {
+  margin-bottom: 40px;
+  font-size: 0.9em;
+  color: #303030;
+}
+article .post-meta a {
+  color: #e1680f;
+  text-decoration: none;
+  font-family: "Archivo Narrow"
+}
+article .post-meta a:hover {
+  color: #e1680f;
+  text-decoration: underline;
+}
+article .the-content a {
+  text-decoration: none;
+}
+article .the-content a:hover {
+  text-decoration: underline;
+}
+article .the-content p {
+  color: #303030;
+}
+article .the-content img {
+  width: 100%;
+  height: auto;
+}
+article .meta {
+  line-height: 14.8px;
+  font-size: 0.9em;
+  text-transform: capitalize;
+}
+article .meta div {
+  float: left;
+}
+article .meta .post-categories {
+  list-style: none;
+  margin: 0 0 10px 0;
+  font-family: "Archivo Narrow"
+}
+article .meta .post-categories a:hover {
+  text-decoration: underline;
+}
+article .meta .post-categories li {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* Page loop styling */
+.page article {
+  border-bottom: none;
+}
+.page article .title {
+  margin-bottom: 40px;
+}
+/* Pagination */
+#pagination {
+  margin-bottom: 40px;
+  width: 100%;
+}
+#pagination .past-page {
+  float: right;
+}
+#pagination .next-page {
+  float: left;
+}
+/* Comments */
+h3#comments {
+  margin-bottom: 80px;
+  font-size: 16px;
+}
+.commentlist {
+  list-style: none;
+  margin: 0;
+}
+.commentlist .comment {
+  margin: 0 0 40px 50px;
+  padding: 20px;
+  position: relative;
+  list-style: none;
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.commentlist .comment .children {
+  margin-top: 40px;
+}
+.commentlist .comment-author {
+  float: left;
+  margin-right: 10px;
+}
+.commentlist .comment-author img {
+  position: absolute;
+  left: -50px;
+  top: 5px;
+}
+.commentlist .comment-author .says {
+  display: none;
+}
+.comment-meta {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.comment-subscription-form,
+.comment-subscription-form {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+#respond {
+  margin-bottom: 80px;
+}
+#respond > h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+#respond form label {
+  color: #303030;
+}
+footer {
+  text-align: center;
+  padding-bottom: 40px;
+  font-size: 1.0em;
+  color: 303030;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #e1680f;
+}
+/* FontAwesome */
+.fa, .far, .fas {
+  color: #303030;
+}
+/* Misc & mixens
+-------------------------------------------------------------- */
+/* Jetpack Gallery */.gallery .gallery-item {
+  margin-top: 0 !important;
+}
+.gallery img {
+  border: none !important;
+}
+.hide-text {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.clear {
+  clear: both;
+}
+/* clear floats */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
+/* Media Queries for responsivenessssssss
+-------------------------------------------------------------- */
+@media (max-width: 790px) {
+  header {
+    padding: 0;
+  }
+  header .gravatar {
+    float: none;
+  }
+  header hgroup {
+    width: 100%;
+  }
+}
