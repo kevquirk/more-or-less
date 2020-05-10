@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php bloginfo('name'); ?> | <?php if( is_home() ) : echo bloginfo( 'description' ); endif; ?><?php wp_title( '', true ); ?></title>
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 <?php wp_head(); ?>
 
@@ -32,7 +33,7 @@
 		</div><!--/ author -->
 		
 		<div id="brand">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><br><span><?php echo get_bloginfo( 'description' ); ?></span></h1>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> &mdash; <span><?php echo get_bloginfo( 'description' ); ?></span></h1>
 		</div><!-- /brand -->
 	
 		<nav role="navigation" class="site-navigation main-navigation">
@@ -60,7 +61,7 @@
 ?>
 			<?php if ( have_posts() ) : ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>                 
+				<?php while ( have_posts() ) : the_post(); ?>
 
 					<article class="post">
 					
@@ -70,12 +71,16 @@
 							</a>
 						</h1>
 						<div class="post-meta">
-							<?php the_date('j F Y'); ?>
+							<?php if( comments_open() ) : ?>
+								<span class="comments-link">
+									<?php comments_popup_link( __( 'Comment', 'break' ), __( '1 Comment', 'break' ), __( '% Comments', 'break' ) ); ?>
+								</span>
+							<?php endif; ?>
 						
-						</div><!--/post-meta -->						
-
+						</div><!--/post-meta -->
+						
 						<div class="the-content">
-							<?php the_excerpt( 'Continue...' ); ?>
+							<?php the_content( 'Continue...' ); ?>
 							
 							<?php wp_link_pages(); ?>
 						</div><!-- the-content -->
@@ -124,9 +129,9 @@
 					
 						<h1 class="title"><?php the_title() ?></h1>
 						<div class="post-meta">
-							<?php the_date('j F Y'); ?> | <?php if( comments_open() ) : ?>
+							<?php if( comments_open() ) : ?>
 								<span class="comments-link">
-									<a href="#disqus_thread">Comment</a>
+									<?php comments_popup_link( __( 'Comment', 'less' ), __( '1 Comment', 'less' ), __( '% Comments', 'less' ) ); ?>
 								</span>
 							<?php endif; ?>
 						
@@ -147,6 +152,13 @@
 
 				<?php endwhile; ?>
 				
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template( '', true );
+				?>
+
+
 			<?php else : ?>
 				
 				<article class="post error">
@@ -208,7 +220,9 @@
 <footer class="site-footer" role="contentinfo">
 	<div class="site-info container">
 		<?php do_action( 'break_credits' ); ?>
-		<i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i> <i class="fab fa-creative-commons-sa"></i> <?php echo date("Y"); ?> <a href="https://kevq.uk" >Kev Quirk</a> | <a href="https://wp.kevq.uk/about/#license-info">License Information</a> | <a href="https://wp.kevq.uk/about/#theme">Theme Information</a>
+		<a href="http://wordpress.org/" title="A Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress</a>
+		<span class="sep"> and </span>
+		<a href="http://lessmade.com/themes/less" rel="theme">LESS</a> by <a href="http://jarederickson.com" rel="designer">Jared Erickson</a>
 	</div><!-- .site-info -->
 </footer><!-- #colophon .site-footer -->
 
